@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import Head from 'next/head';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Hero from '@/components/ui/Hero';
@@ -117,36 +117,6 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
-  const city = getCityBySlug(params.slug);
-  
-  if (!city) {
-    return {
-      title: 'City Not Found',
-      description: 'The requested city could not be found.',
-    };
-  }
-
-  const title = buildTitle({ city: city.name });
-  const description = buildDescription({ city: city.name });
-  const canonical = buildCanonicalUrl(`/cities/${city.slug}`);
-
-  return {
-    title,
-    description,
-    canonical,
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      type: 'website',
-    },
-    twitter: {
-      title,
-      description,
-    },
-  };
-}
 
 export default function CityPage({ params }: CityPageProps) {
   const city = getCityBySlug(params.slug);
@@ -165,8 +135,23 @@ export default function CityPage({ params }: CityPageProps) {
     { name: `${city.name}, CA`, url: `/cities/${city.slug}` }
   ];
 
+  const title = buildTitle({ city: city.name });
+  const description = buildDescription({ city: city.name });
+  const canonical = buildCanonicalUrl(`/cities/${city.slug}`);
+
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import Head from 'next/head';
 import { notFound } from 'next/navigation';
 import Hero from '@/components/ui/Hero';
 import FAQ from '@/components/ui/FAQ';
@@ -215,45 +215,18 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: ProgramPageProps): Promise<Metadata> {
+
+export default function ProgramPage({ params }: ProgramPageProps) {
   const { program } = params;
   const data = programData[program];
-  
+
   if (!data) {
-    return {
-      title: 'Program Not Found',
-      description: 'The requested loan program could not be found.',
-    };
+    notFound();
   }
 
   const title = buildTitle({ program });
   const description = buildDescription({ program });
   const canonical = buildCanonicalUrl(`/programs/${program}`);
-
-  return {
-    title,
-    description,
-    canonical,
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      type: 'website',
-    },
-    twitter: {
-      title,
-      description,
-    },
-  };
-}
-
-export default function ProgramPage({ params }: ProgramPageProps) {
-  const { program } = params;
-  const data = programData[program];
-  
-  if (!data) {
-    notFound();
-  }
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },
@@ -263,6 +236,17 @@ export default function ProgramPage({ params }: ProgramPageProps) {
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

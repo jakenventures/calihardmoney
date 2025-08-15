@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import Head from 'next/head';
 import FAQ from '@/components/ui/FAQ';
 import CTAButton from '@/components/ui/CTAButton';
 import { buildTitle, buildDescription, buildCanonicalUrl, faqPageJsonLd, breadcrumbListJsonLd } from '@/lib/seo';
@@ -86,23 +86,12 @@ const faqItems = [
   }
 ];
 
-export const metadata: Metadata = {
-  title: buildTitle({ page: 'faq' }),
-  description: buildDescription({ page: 'faq' }),
-  canonical: buildCanonicalUrl('/faq'),
-  openGraph: {
-    title: buildTitle({ page: 'faq' }),
-    description: buildDescription({ page: 'faq' }),
-    url: buildCanonicalUrl('/faq'),
-    type: 'website',
-  },
-  twitter: {
-    title: buildTitle({ page: 'faq' }),
-    description: buildDescription({ page: 'faq' }),
-  },
-};
 
 export default function FAQPage() {
+  const title = buildTitle({ page: 'faq' });
+  const description = buildDescription({ page: 'faq' });
+  const canonical = buildCanonicalUrl('/faq');
+
   const breadcrumbs = [
     { name: 'Home', url: '/' },
     { name: 'FAQ', url: '/faq' }
@@ -110,6 +99,17 @@ export default function FAQPage() {
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

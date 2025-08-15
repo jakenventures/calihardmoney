@@ -1,25 +1,12 @@
-import { Metadata } from 'next';
+import Head from 'next/head';
 import ContactForm from '@/components/forms/ContactForm';
 import CTAButton from '@/components/ui/CTAButton';
 import { buildTitle, buildDescription, buildCanonicalUrl, localBusinessJsonLd, breadcrumbListJsonLd } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: buildTitle({ page: 'contact' }),
-  description: buildDescription({ page: 'contact' }),
-  canonical: buildCanonicalUrl('/contact'),
-  openGraph: {
-    title: buildTitle({ page: 'contact' }),
-    description: buildDescription({ page: 'contact' }),
-    url: buildCanonicalUrl('/contact'),
-    type: 'website',
-  },
-  twitter: {
-    title: buildTitle({ page: 'contact' }),
-    description: buildDescription({ page: 'contact' }),
-  },
-};
-
 export default function ContactPage() {
+  const title = buildTitle({ page: 'contact' });
+  const description = buildDescription({ page: 'contact' });
+  const canonical = buildCanonicalUrl('/contact');
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },
@@ -28,6 +15,17 @@ export default function ContactPage() {
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
