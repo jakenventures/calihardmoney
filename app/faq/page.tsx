@@ -1,4 +1,4 @@
-import Head from 'next/head';
+// Head management will be handled in layout.tsx for Next.js 13 App Router
 import FAQ from '@/components/ui/FAQ';
 import CTAButton from '@/components/ui/CTAButton';
 import { buildTitle, buildDescription, buildCanonicalUrl, faqPageJsonLd, breadcrumbListJsonLd } from '@/lib/seo';
@@ -99,17 +99,6 @@ export default function FAQPage() {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={canonical} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:type" content="website" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

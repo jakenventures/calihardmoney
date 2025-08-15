@@ -1,4 +1,4 @@
-import Head from 'next/head';
+// Head management will be handled in layout.tsx for Next.js 13 App Router
 import { notFound } from 'next/navigation';
 import Hero from '@/components/ui/Hero';
 import FAQ from '@/components/ui/FAQ';
@@ -236,17 +236,6 @@ export default function ProgramPage({ params }: ProgramPageProps) {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={canonical} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:type" content="website" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

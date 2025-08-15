@@ -16,7 +16,7 @@ const nodeVersion = process.version;
 console.log(`✅ Node.js version: ${nodeVersion}`);
 
 if (parseInt(nodeVersion.split('.')[0].replace('v', '')) < 18) {
-  console.error('❌ Node.js 18+ required for Netlify deployment');
+  console.error('❌ Node.js 18+ required for Next.js 13.5 deployment');
   process.exit(1);
 }
 

@@ -16,11 +16,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    turbotrace: {
-      logLevel: 'error'
-    }
-  },
   generateBuildId: async () => {
     return 'netlify-build'
   }

@@ -4,7 +4,7 @@
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "18"
   NEXT_CACHE = ".next/cache"
   NETLIFY_CACHE_NEXTJS = "true"
 
