@@ -5,9 +5,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    appDir: true,
+  },
   compress: true,
   poweredByHeader: false,
-  reactStrictMode: false, // Disable strict mode to avoid potential issues
+  reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
   },

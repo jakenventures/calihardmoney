@@ -100,9 +100,11 @@ ls out/
 - Check build logs in Netlify dashboard
 
 ### ✅ Fixed Common Issues
+- **Next.js Version**: Downgraded to Next.js 14.2.18 (stable, no metadata loader issues)
+- **React Version**: Downgraded to React 18 (compatible with Next.js 14)
 - **Node.js Version**: Updated to Node.js 20 (stable LTS version)
-- **Webpack/Image Import Errors**: Simplified Next.js config for static export
-- **Metadata Image Loaders**: Completely removed dynamic metadata processing
+- **Webpack/Image Import Errors**: Eliminated by using stable Next.js 14
+- **Metadata Image Loaders**: Issue resolved with Next.js 14
 - **Build Configuration**: Disabled strict mode and build-time checks for compatibility
 - **Favicon Issues**: Using simple SVG data URI for favicon
 - **Environment Variables**: Added Netlify build environment optimizations
