@@ -9,6 +9,7 @@
     "lint": "next lint",
     "export": "next build",
     "validate": "node validate-build.js",
+    "validate-netlify": "node validate-netlify.js",
     "clean": "rm -rf .next out"
   },
   "dependencies": {

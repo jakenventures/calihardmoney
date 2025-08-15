@@ -1,15 +1,10 @@
 [build]
   publish = "out"
   command = "npm run build"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
-  NEXT_DISABLE_STATIC_IMAGES = "true"
-  DISABLE_METADATA_IMAGES = "true"
-  NEXT_DISABLE_METADATA_IMAGES = "true"
-  DISABLE_WEBPACK_METADATA_LOADER = "true"
-  NEXT_DISABLE_IMAGE_OPTIMIZATION = "true"
-  NEXT_DISABLE_FAVICON = "true"
   NEXT_CACHE = ".next/cache"
   NETLIFY_CACHE_NEXTJS = "true"
 
@@ -26,10 +21,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-DNS-Prefetch-Control = "on"
 
-[[headers]]
-  for = "/favicon.ico"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/_next/static/*"
