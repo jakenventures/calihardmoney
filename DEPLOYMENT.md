@@ -99,6 +99,11 @@ ls out/
 - Verify all dependencies are installed
 - Check build logs in Netlify dashboard
 
+### ✅ Fixed Common Issues
+- **Webpack/Image Import Errors**: Fixed by using Next.js 15 dynamic icon generation
+- **Invalid next.config.js**: Removed deprecated `swcMinify` option
+- **Favicon Issues**: Using generated icons instead of static files
+
 ### Contact Form Not Working
 - Verify function deployed (check Functions tab)
 - Test function directly: `/.netlify/functions/contact`

@@ -5,13 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    optimizeCss: true,
-  },
   compress: true,
   poweredByHeader: false,
-  reactStrictMode: true,
-  swcMinify: true
+  reactStrictMode: true
 }
 
 module.exports = nextConfig
