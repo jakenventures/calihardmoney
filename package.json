@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
-    "validate": "node validate-deployment.js"
+    "validate": "node validate-build.js",
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "next": "14.2.18",
