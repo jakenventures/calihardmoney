@@ -101,10 +101,11 @@ ls out/
 
 ### ✅ Fixed Common Issues
 - **Node.js Version**: Updated to Node.js 20 (stable LTS version)
-- **Webpack/Image Import Errors**: Fixed by removing dynamic metadata loaders
-- **Invalid next.config.js**: Removed deprecated `swcMinify` option
+- **Webpack/Image Import Errors**: Simplified Next.js config for static export
+- **Metadata Image Loaders**: Completely removed dynamic metadata processing
+- **Build Configuration**: Disabled strict mode and build-time checks for compatibility
 - **Favicon Issues**: Using simple SVG data URI for favicon
-- **Static Export**: Configured webpack to handle static assets properly
+- **Environment Variables**: Added Netlify build environment optimizations
 
 ### Contact Form Not Working
 - Verify function deployed (check Functions tab)

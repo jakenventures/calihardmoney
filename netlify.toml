@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NEXT_DISABLE_STATIC_IMAGES = "true"
+  DISABLE_METADATA_IMAGES = "true"
 
 [[redirects]]
   from = "/api/*"
