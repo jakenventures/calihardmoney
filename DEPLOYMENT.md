@@ -11,7 +11,7 @@ This project is **ready to deploy** to Netlify with zero configuration!
 ## Manual Deployment Steps
 
 ### Prerequisites
-- Node.js 18+ installed
+- Node.js 20+ installed
 - Git repository created
 - Netlify account
 
@@ -100,6 +100,7 @@ ls out/
 - Check build logs in Netlify dashboard
 
 ### ✅ Fixed Common Issues
+- **Node.js Version**: Updated to Node.js 20 (stable LTS version)
 - **Webpack/Image Import Errors**: Fixed by using Next.js 15 dynamic icon generation
 - **Invalid next.config.js**: Removed deprecated `swcMinify` option
 - **Favicon Issues**: Using generated icons instead of static files

@@ -92,6 +92,13 @@ try {
     console.log('  ❌ Publish directory not configured correctly');
     allValid = false;
   }
+  
+  if (netlifyConfig.includes('NODE_VERSION = "20"')) {
+    console.log('  ✅ Node.js 20 configured');
+  } else {
+    console.log('  ❌ Node.js version not set to 20');
+    allValid = false;
+  }
 } catch (e) {
   console.log('  ❌ Error reading netlify.toml');
   allValid = false;
