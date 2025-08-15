@@ -103,6 +103,7 @@ ls out/
 - **Next.js Version**: Downgraded to Next.js 14.2.18 (stable, no metadata loader issues)
 - **React Version**: Downgraded to React 18 (compatible with Next.js 14)
 - **Node.js Version**: Updated to Node.js 20 (stable LTS version)
+- **Next.js Config**: Removed deprecated `appDir` experimental flag (stable in Next.js 14)
 - **Webpack/Image Import Errors**: Eliminated by using stable Next.js 14
 - **Metadata Image Loaders**: Issue resolved with Next.js 14
 - **Build Configuration**: Disabled strict mode and build-time checks for compatibility
