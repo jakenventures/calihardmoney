@@ -6,6 +6,8 @@
   NODE_VERSION = "20"
   NEXT_DISABLE_STATIC_IMAGES = "true"
   DISABLE_METADATA_IMAGES = "true"
+  NEXT_CACHE = ".next/cache"
+  NETLIFY_CACHE_NEXTJS = "true"
 
 [[redirects]]
   from = "/api/*"
