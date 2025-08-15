@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Jaken Finance Group - California Hard Money Loans',
     images: [
       {
-        url: '/opengraph-image',
+        url: 'https://via.placeholder.com/1200x630/2563eb/ffffff?text=Jaken+Finance+Group',
         width: 1200,
         height: 630,
         alt: 'California Hard Money Loans - Jaken Finance Group',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: buildTitle(),
     description: buildDescription(),
-    images: ['/opengraph-image'],
+    images: ['https://via.placeholder.com/1200x630/2563eb/ffffff?text=Jaken+Finance+Group'],
   },
   other: {
     'msapplication-TileColor': '#2563eb',
@@ -50,6 +50,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>" />
         <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossOrigin="" />
         
         <script

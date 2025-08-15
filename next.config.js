@@ -7,7 +7,15 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  reactStrictMode: true
+  reactStrictMode: true,
+  webpack: (config) => {
+    // Disable metadata image loader for static export
+    config.module.rules.push({
+      test: /\.(ico|png|jpg|jpeg|gif|svg)$/,
+      type: 'asset/resource',
+    });
+    return config;
+  }
 }
 
 module.exports = nextConfig
