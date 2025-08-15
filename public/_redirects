@@ -1,0 +1,13 @@
+# API redirects to Netlify Functions
+/api/* /.netlify/functions/:splat 200
+
+# Next.js routing - ensure all routes are handled
+/cities/* /cities/:splat 200
+/programs/* /programs/:splat 200
+
+# Security redirects
+/.env 404
+/.env.* 404
+
+# Fallback for SPA routing
+/* /index.html 200
